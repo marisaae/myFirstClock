@@ -1,0 +1,18 @@
+
+#clock-face {
+    background-image: url(digital-clock-black-white.svg.hi.png);
+height: 24rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.clock {
+  color: rgb(238, 0, 255);
+  font-size: 60px;
+  font-family: "Roboto Mono", monospace;
+}
