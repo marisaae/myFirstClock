@@ -1,11 +1,31 @@
-window.addEventListener('DOMContentLoaded', event => {
-displayTime();
-})
+window.addEventListener("DOMContentLoaded", (event) => {
+    setInterval(displayTime, 1000);
+});
 
 function displayTime() {
+  let date = new Date();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
+let session = "AM";
 
-    const date = new Date();
-    const hours = date.getHours();
-    const minutes = date.getMinutes();
-    const seconds = date.getSeconds();
+if (hours == 0) {
+    hours = 12;
+}
+
+if (hours > 12) {
+    hours = hours - 12;
+    session = "PM";
+}
+
+hours = (hours < 10) ? `0${hours}` : hours;
+minutes = (minutes < 10) ? `0${minutes}` : minutes;
+seconds = (seconds < 10) ? `0${seconds}` : seconds;
+
+let time = `${hours}:${minutes}:${seconds} ${session}`
+
+let displayClock = document.getElementById('clock-face');
+
+displayClock.innerHTML = time;
+
 }
