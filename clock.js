@@ -1,5 +1,12 @@
 window.addEventListener("DOMContentLoaded", (event) => {
-    setInterval(displayTime, 1000);
+    let intervalId = setInterval(displayTime, 1000);
+
+    //stop clock
+    let stopButton = document.getElementById("stop-button");
+    stopButton.addEventListener('click', event => {
+        clearInterval(intervalId);
+        stopButton.style.backgroundColor = 'red';
+    })
 });
 
 function displayTime() {
@@ -29,3 +36,4 @@ let displayClock = document.getElementById('clock-face');
 displayClock.innerHTML = time;
 
 }
+
